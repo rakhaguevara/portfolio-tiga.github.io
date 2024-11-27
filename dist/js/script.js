@@ -68,14 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
     typingText.textContent = ""; // Clear previous text content
     index = 0; // Reset index for the typing effect
 
+    // Function to handle each typing step
     function typingStep() {
       if (index < text.length) {
         typingText.textContent += text.charAt(index);
         index++;
         setTimeout(typingStep, 100); // Adjust typing speed here
-      } else {
-        // Reset the typing animation when the typing is finished
-        setTimeout(type, 1000); // Restart after a delay
       }
     }
 
@@ -85,6 +83,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial typing effect when the page loads
   type();
+
+  // Listen for changes in theme (light/dark mode)
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  // Function to handle theme change and restart the typing animation
+  function handleThemeChange() {
+    typingText.textContent = ""; // Clear current text
+    type(); // Restart typing animation
+  }
+
+  // Add listener to detect theme change
+  mediaQuery.addEventListener("change", handleThemeChange);
+
+  // If the page loads with a dark mode preference, start typing again
+  if (mediaQuery.matches) {
+    handleThemeChange();
+  }
 });
 
 // Styling dan Filter Project
