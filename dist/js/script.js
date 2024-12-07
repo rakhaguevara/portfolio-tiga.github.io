@@ -68,21 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
     typingText.textContent = ""; // Clear previous text content
     index = 0; // Reset index for the typing effect
 
-<<<<<<< HEAD
     // Function to handle each typing step
-=======
->>>>>>> e83db0f100fc0214bfbeb0f2b138d33983972872
     function typingStep() {
       if (index < text.length) {
         typingText.textContent += text.charAt(index);
         index++;
         setTimeout(typingStep, 100); // Adjust typing speed here
-<<<<<<< HEAD
-=======
-      } else {
-        // Reset the typing animation when the typing is finished
-        setTimeout(type, 1000); // Restart after a delay
->>>>>>> e83db0f100fc0214bfbeb0f2b138d33983972872
       }
     }
 
@@ -92,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Initial typing effect when the page loads
   type();
-<<<<<<< HEAD
 
   // Listen for changes in theme (light/dark mode)
   const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -110,8 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (mediaQuery.matches) {
     handleThemeChange();
   }
-=======
->>>>>>> e83db0f100fc0214bfbeb0f2b138d33983972872
 });
 
 // Styling dan Filter Project
